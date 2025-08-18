@@ -30,7 +30,7 @@ input[type="email"],
 input[type="tel"],
 input[type="date"],
 select {
-  width: 100%;
+  width: 90%;
   padding: 1.5rem;
   border: 1px solid #bbb;
   border-radius: 4px;
@@ -50,7 +50,7 @@ fieldset {
 input:invalid,
 select:invalid {
   border-color: #blue;
-  background: #f2dede;
+  background: #white;
 }
 
 .error {
