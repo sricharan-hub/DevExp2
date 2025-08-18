@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF‑8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>User Registration</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>Registration Form</h1>
+
+    <form id="regForm" novalidate>
+      <fieldset>
+        <legend>Personal Information</legend>
+
+        <label for="fname">First Name *</label>
+        <input type="text" id="fname" name="fname" required minlength="2" />
+
+        <label for="lname">Last Name *</label>
+        <input type="text" id="lname" name="lname" required minlength="2" />
+
+        <label for="father">Father’s Name *</label>
+        <input type="text" id="father" name="father" required />
+
+        <label for="mother">Mother’s Name *</label>
+        <input type="text" id="mother" name="mother" required />
+
+        <label for="email">Email *</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="phone">Phone Number *</label>
+        <input
+          type="tel"
+          id="phone"
+          name="phone"
+          pattern="\\d{10}"
+          title="10‑digit phone number, digits only"
+          required
+        />
+
+        <label for="dob">Date of Birth *</label>
+        <input type="date" id="dob" name="dob" required max="" />
+
+        <p>Gender *</p>
+        <label><input type="radio" name="gender" value="Male" required /> Male</label>
+        <label><input type="radio" name="gender" value="Female" /> Female</label>
+        <label><input type="radio" name="gender" value="Other" /> Other</label>
+
+        <label for="qualification">Qualification *</label>
+        <select id="qualification" name="qualification" required>
+          <option value="">— select —</option>
+          <option value="High School">High School</option>
+          <option value="Bachelor’s">Bachelor’s</option>
+          <option value="Master’s">Master’s</option>
+          <option value="PhD">PhD</option>
+          <option value="Other">Other</option>
+        </select>
+
+        <label for="photo">Passport-size Photo *</label>
+        <input
+          type="file"
+          id="photo"
+          name="photo"
+          accept="image/jpeg,image/png"
+          required
+        />
+
+        <label for="sign">Signature *</label>
+        <input
+          type="file"
+          id="sign"
+          name="sign"
+          accept="image/jpeg,image/png"
+          required
+        />
+      </fieldset>
+
+      <div class="buttons">
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+      </div>
+    </form>
+
+    <section id="result" aria-live="polite"></section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
