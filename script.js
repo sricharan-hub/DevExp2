@@ -4,7 +4,7 @@
   const result = document.getElementById('result');
   const dobInput = document.getElementById('dob');
 
-  // Set max date so DOB cannot be in the future
+  
   const today = new Date().toISOString().split('T')[0];
   dobInput.max = today;
 
@@ -12,10 +12,10 @@
     e.preventDefault();
     clearErrors();
 
-    // Basic HTML5 validation
+
     if (!form.checkValidity()) {
       form.reportValidity();
-      return;
+0      return;
     }
 
     // Now custom file validation: check file count, type and size (max 2 MB)
@@ -76,8 +76,6 @@
 
     result.innerHTML = `<h2>Submitted Details</h2>
       <p><strong>Name:</strong> ${escapeHTML(entries.fname)} ${escapeHTML(entries.lname)}</p>
-      <p><strong>Father’s Name:</strong> ${escapeHTML(entries.father)}</p>
-      <p><strong>Mother’s Name:</strong> ${escapeHTML(entries.mother)}</p>
       <p><strong>Email:</strong> ${escapeHTML(entries.email)}</p>
       <p><strong>Phone:</strong> ${escapeHTML(entries.phone)}</p>
       <p><strong>Date of Birth:</strong> ${escapeHTML(entries.dob)}</p>
