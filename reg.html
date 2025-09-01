@@ -1,80 +1,61 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Web Registration Form</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <form id="registrationForm" onsubmit="return validateForm()">
-    <h2>Web Registration Form</h2>
+    <div class="form-container">
+        <h2>Registration Form</h2>
+        <form id="registrationForm" enctype="multipart/form-data" onsubmit="return handleSubmit(event)">
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" name="firstName" required>
 
-    <label>First Name:</label>
-    <input type="text" name="firstName">
-    <span class="error" id="firstNameError"></span>
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" name="lastName" required>
 
-    <label>Last Name:</label>
-    <input type="text" name="lastName">
-    <span class="error" id="lastNameError"></span>
+            <label for="fatherName">Father's Name:</label>
+            <input type="text" id="fatherName" name="fatherName" required>
 
-    <label>Father's Name:</label>
-    <input type="text" name="fatherName">
-    <span class="error" id="fatherNameError"></span>
+            <label for="motherName">Mother's Name:</label>
+            <input type="text" id="motherName" name="motherName" required>
 
-    <label>Mother's Name:</label>
-    <input type="text" name="motherName">
-    <span class="error" id="motherNameError"></span>
+            <label for="phoneNumber">Phone Number:</label>
+            <input type="tel" id="phoneNumber" name="phoneNumber" pattern="[0-9]{10}" required placeholder="10 digits">
 
-    <label>Date of Birth:</label>
-    <input type="date" name="dob">
-    <span class="error" id="dobError"></span>
+            <label for="email">Email ID:</label>
+            <input type="email" id="email" name="email" required>
 
-    <label>Gender:</label>
-    <select name="gender">
-      <option value="">Select Gender</option>
-      <option>Male</option>
-      <option>Female</option>
-      <option>Other</option>
-    </select>
-    <span class="error" id="genderError"></span>
+            <label for="address">Address:</label>
+            <textarea id="address" name="address" rows="4" required></textarea>
 
-    <label>Address:</label>
-    <textarea name="address" rows="3"></textarea>
-    <span class="error" id="addressError"></span>
+            <label for="education">Education:</label>
+            <input type="text" id="education" name="education" required>
 
-    <label>Qualification:</label>
-    <input type="text" name="qualification">
-    <span class="error" id="qualificationError"></span>
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender" required>
+                <option value="">Select Gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+            </select>
 
-    <label>Education Details:</label>
-    <textarea name="education" rows="3"></textarea>
-    <span class="error" id="educationError"></span>
+            <label for="image">Upload Image:</label>
+            <input type="file" id="image" name="image" accept="image/*" required>
 
-    <label>Upload Photo:</label>
-    <input type="file" name="photo" accept="image/*">
-    <span class="error" id="photoError"></span>
+            <label for="signature">Upload Signature:</label>
+            <input type="file" id="signature" name="signature" accept="image/*" required>
 
-    <label>Upload Signature:</label>
-    <input type="file" name="signature" accept="image/*">
-    <span class="error" id="signatureError"></span>
-
-    <label>Email ID:</label>
-    <input type="email" name="email">
-    <span class="error" id="emailError"></span>
-
-    <label>Phone Number:</label>
-    <input type="tel" name="phone" pattern="[0-9]{10}">
-    <span class="error" id="phoneError"></span>
-
-    <div class="btn-group">
-      <button type="submit" class="submit-btn">Submit</button>
-      <button type="reset" class="reset-btn">Reset</button>
+            <button type="submit">Submit</button>
+            <button type="reset">Reset</button>
+        </form>
     </div>
-  </form>
 
-  <div id="result"></div>
+    <div id="output" class="output" style="display:none;"></div>
 
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
